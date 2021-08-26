@@ -1,25 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-
+import {product} from './data'
+import Profilecomponent from './Profile/Profilecomponent';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        {product.map(el => <Profilecomponent  fullName={el.fullName} bio={el.bio} profession={el.profession}><img src='./ouma.jpg' alt='oumayma' width='250px' height='250px' style={{border:'1px solid black', borderRadius:'150px'}}/></Profilecomponent>)}
+      </div>
   );
-}
-
+};
 export default App;
